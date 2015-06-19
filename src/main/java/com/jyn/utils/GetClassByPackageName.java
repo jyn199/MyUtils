@@ -23,6 +23,7 @@ public class GetClassByPackageName {
 		}
 		ArrayList<Class> classes = new ArrayList<Class>();
 		for (File directory : dirs) {
+			System.out.println(directory.getAbsolutePath());
 			classes.addAll(findClasses(directory, packageName));
 		}
 		return classes;
@@ -53,7 +54,7 @@ public class GetClassByPackageName {
 
 	public static void main(String[] args) {
 		try {
-			List<Class> list = getClassesByPackageName("com.jyn.utils");
+			List<Class> list = getClassesByPackageName("com.jyn");
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println(list.get(i).getName());
 			}
